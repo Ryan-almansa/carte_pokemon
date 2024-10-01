@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon</title>
+  <link rel="stylesheet" href="zephir.css">
+</head>
+<body>
+  <style>
+    body {
+      background-color: #2f22a7af;
+      overflow: hidden;
+      
+    }
+
+    .sparkle {
+      position: absolute;
+      bottom: 0;
+      width: 15px;
+      height: 15px;
+      background-color: rgb(59, 12, 38);
+      border-radius: 50%;
+      box-shadow: 0 0 10px yellow, 0 0 20px orange, 0 0 30px red;
+
+    }
+  </style>
+  
+  <div class="pokemon-card">
+    <div class="card-header">
+      <h1>zephir </h1>
+      <span class="pokemon-type">Stalk</span>
+      
+    </div>
+    <img src="https://img.freepik.com/photos-premium/homme-politique-prononcant-discours-campagne-demandant-voteai_252214-6740.jpg" alt="Pikachu" class="pokemon-image">
+    <div class="card-stats">
+      <p><strong>HP :</strong>--------------- 56</p>
+      <p><strong>Attaque :</strong> >---------------45</p>
+      <p><strong>Défense :</strong> >---------------70</p>
+      <p><strong>Vitesse :</strong> >---------------25</p>
+    </div>
+    <div class="card-footer">
+      <p>N°3301 - Le stalkeur fou   </p>
+    </div>
+  </div>
+  <script>
+    const numberOfSparkles = 500; // Nombre d'étincelles
+    const body = document.body;
+  
+    // Fonction pour générer une étincelle
+    function createSparkle() {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      
+      // Position de départ aléatoire près du bas de l'écran
+      const startX = window.innerWidth / 2 + (Math.random() * 100 - 50);
+      sparkle.style.left = `${startX}px`;
+  
+      // Ajouter l'étincelle à la page
+      body.appendChild(sparkle);
+  
+      // Déplacer l'étincelle dans une direction aléatoire
+      const randomX = Math.random() * 200 - 100;  // Mouvement horizontal aléatoire
+      const randomY = Math.random() * 200 - 150;  // Mouvement vertical aléatoire
+      const duration = Math.random() * 2 + 1;     // Durée aléatoire de l'animation
+  
+      sparkle.animate([
+        { transform: 'translate(0, 0)', opacity: 1 },
+        { transform: `translate(${randomX}vw, ${randomY}vh)`, opacity: 0 }
+      ], {
+        duration: duration * 1000,
+        easing: 'ease-out',
+        iterations: 1,
+        fill: 'forwards'
+      });
+  
+      // Supprimer l'étincelle après l'animation
+      setTimeout(() => {
+        sparkle.remove();
+      }, duration * 1000);
+    }
+  
+    // Générer les étincelles de façon répétée
+    setInterval(createSparkle, 100);
+  </script>
+
+</body>
+</html>

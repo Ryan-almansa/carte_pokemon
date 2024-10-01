@@ -1,0 +1,103 @@
+body {
+  background-color: #000;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.sparkle {
+  position: absolute;
+  bottom: 0;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(255, 0, 0);
+  border-radius: 50%;
+  box-shadow: 0 0 10px yellow, 0 0 20px orange, 0 0 30px red;
+  animation: sparkle-animation 5s infinite ease-in-out;
+}
+
+@keyframes sparkle-animation {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    transform: translate(calc(50vw * var(--direction)), -50vh) scale(1.2);
+  }
+  100% {
+    transform: translate(calc(-50vw * var(--direction)), 50vh) scale(0.5);
+    opacity: 1;
+  }
+}
+
+.sparkle:nth-child(odd) {
+  --direction: 1;
+}
+
+.sparkle:nth-child(even) {
+  --direction: -1;
+}
+
+.sparkle:nth-child(1) {
+  animation-duration: 1s;
+  animation-delay: 1s;
+}
+
+.sparkle:nth-child(2) {
+  animation-duration: 2s;
+  animation-delay: 2s;
+}
+
+.sparkle:nth-child(3) {
+  animation-duration: 3s;
+  animation-delay: 3s;
+}
+
+.sparkle:nth-child(4) {
+  animation-duration: 3.5s;
+  animation-delay: 3.5s;
+}
+
+.sparkle:nth-child(5) {
+  animation-duration: 4s;
+  animation-delay: 4s;
+}
+
+.sparkle:nth-child(6) {
+  animation-duration: 4.5s;
+  animation-delay: 4.5s;
+}
+
+.sparkle:nth-child(7) {
+  animation-duration: 5s;
+  animation-delay: 5s;
+}
+
+.sparkle:nth-child(8) {
+  animation-duration: 5.5s;
+  animation-delay: 5.5s;
+}
+
+.sparkle:nth-child(9) {
+  animation-duration: 6s;
+  animation-delay: 6s;
+}
+
+.sparkle:nth-child(10) {
+  animation-duration: 6.5s;
+  animation-delay: 6.5s;
+}
+
+.sparkle:nth-child(11) {
+  animation-duration: 7s;
+  animation-delay: 7.5s;
+}
+
+.sparkle:nth-child(12) {
+  animation-duration: 8s;
+  animation-delay: 8s;
+}
