@@ -1,0 +1,130 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #c71c1c;
+}
+
+.carte {
+    position: relative;
+    width: 150px; 
+    height: 300px; 
+    background-color: #1566b196; 
+    border: 3px solid #132692; 
+    border-radius: 75px; 
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(37, 11, 110, 0.822);
+}
+
+.image-carte {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cout {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.301); 
+    padding: 5px;
+    border-radius: 5px;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(216, 102, 9, 0.705), transparent);
+    mix-blend-mode: screen;
+    opacity: 1.5;
+    pointer-events: none;
+    animation: lightPulse 5s infinite;
+}
+
+@keyframes lightPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 41.8; }
+}
+
+
+.card-stats {
+    text-align: left;
+  }
+
+body {
+    margin: 0;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.rain-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.sparkle {
+    position:relative;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, rgba(214, 6, 6, 0.767) 0%, rgba(255,255,255,0) 60%);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                0 0 20px rgb(255, 0, 255),
+                0 0 30px rgb(0, 255, 255),
+                0 0 40px rgb(255, 255, 0);
+    border-radius: 50%;
+    animation: sparkle-fall 5s linear infinite, sparkle-blink 0.5s infinite alternate;
+}
+
+@keyframes sparkle-fall {
+    0% {
+        top: -10px;
+        left: calc(100vw * var(--random-x));
+        opacity: 1;
+    }
+    100% {
+        top: 100vh;
+        left: calc(100vw * var(--random-x) + 50px);
+        opacity: 0;
+    }
+}
+
+@keyframes sparkle-blink {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+.sparkle:nth-child(1) { --random-x: 0.2; animation-duration: 4s; }
+.sparkle:nth-child(2) { --random-x: 0.4; animation-duration: 5.2s; }
+.sparkle:nth-child(3) { --random-x: 0.6; animation-duration: 3.8s; }
+.sparkle:nth-child(4) { --random-x: 0.8; animation-duration: 4.5s; }
+.sparkle:nth-child(5) { --random-x: 1.0; animation-duration: 5s; }
+.sparkle:nth-child(6) { --random-x: 2.2; animation-duration: 4s; }
+.sparkle:nth-child(7) { --random-x: 8.4; animation-duration: 5.2s; }
+.sparkle:nth-child(8) { --random-x: 6.6; animation-duration: 3.8s; }
+.sparkle:nth-child(9) { --random-x: 5.8; animation-duration: 4.5s; }
+.sparkle:nth-child(10) { --random-x: 1.9; animation-duration: 5s; }
+.sparkle:nth-child(11) { --random-x: 7.2; animation-duration: 4s; }
+.sparkle:nth-child(12) { --random-x: 8.7; animation-duration: 5.2s; }
+.sparkle:nth-child(13) { --random-x: 9.0; animation-duration: 3.8s; }
+.sparkle:nth-child(14) { --random-x: 4.8; animation-duration: 4.5s; }
+.sparkle:nth-child(15) { --random-x: 1.0; animation-duration: 5s; }
+
+
+
+

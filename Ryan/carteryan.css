@@ -1,83 +1,231 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #7c757580;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
+  font-family: 'Arial', sans-serif;
+  background-color: #ac676780;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.pokemon-card {
+  background-color: rgba(48, 48, 66, 0.527);
+  border: 2px solid #6e1e1e;
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0px 8px 16px rgba(184, 37, 128, 0.788);
+  text-align: center;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.card-header h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.pokemon-type {
   
-  .pokemon-card {
-    background-color: rgba(48, 48, 66, 0.527);
-    border: 2px solid #6e1e1e;
-    border-radius: 10px;
-    width: 300px;
-    padding: 20px;
-    box-shadow: 0px 8px 16px rgba(184, 37, 128, 0.788);
-    text-align: center;
-  }
-  
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .card-header h1 {
-    font-size: 1.5em;
-    margin: 0;
-  }
-  
-  .pokemon-type {
+    color: rgba(204, 218, 18, 0.644);
+    font-size: 20px;
+    font-weight: bold;
+    animation: clignoter-1 2.0s infinite; 
+}
     
-      color: rgba(204, 218, 18, 0.644);
-      font-size: 20px;
-      font-weight: bold;
-      animation: clignoter 1.0s infinite; 
-  }
-  @keyframes clignoter {
-      0% { opacity: 50; 
-        color: rgb(167, 26, 26);
+@keyframes clignoter-1 {
+    0% { opacity: 50; 
+      color: rgb(238, 11, 11);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    } 
+    50% { opacity: 40; 
+      color: rgb(14, 35, 228);
       padding: 5px 10px;
       border-radius: 15px;
       font-weight: bold;
-      } 
-      50% { opacity: 40; 
-        color: rgb(64, 29, 192);
-        padding: 5px 10px;
-        border-radius: 15px;
-        font-weight: bold;
-      } 
-      100% { opacity: 10;
-      
-        color: rgb(0, 0, 0);
-        padding: 5px 10px;
-        border-radius: 15px;
-        font-weight: bold;} 
+    } 
+    100% { opacity: 10;
+    
+      color: rgb(235, 12, 235);
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-weight: bold;} 
 
-      
+    
+}
+
+.pokemon-image {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 15px;
+}
+
+.card-stats {
+  text-align: left;
+}
+
+.card-stats p {
+  margin: 5px 0;
+  font-size: 1.1em;
+}
+
+.card-footer {
+  margin-top: 15px;
+  font-style: italic;
+  color: #555;
+}
+.card-footer-spe {
+  
+  color: rgba(204, 218, 18, 0.644);
+  font-size: 15px;
+  font-weight: bold;
+  animation: clignoter 1.0s infinite; 
 }
   
-  .pokemon-image {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 15px;
-  }
+@keyframes clignoter {
+  0% { opacity: 50; 
+    color: rgb(25, 221, 84);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  } 
+  50% { opacity: 40; 
+    color: rgb(201, 214, 22);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+  } 
+  100% { opacity: 10;
   
-  .card-stats {
-    text-align: left;
-  }
+    color: rgb(15, 137, 238);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;} 
+
   
-  .card-stats p {
-    margin: 5px 0;
-    font-size: 1.1em;
-  }
-  
-  .card-footer {
-    margin-top: 15px;
-    font-style: italic;
-    color: #555;
-  }
-  
+}
+
+
+
+
+
+.fire-container {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100vw;
+height: 200px;
+display: flex;
+align-items: flex-end;
+}
+
+.flame {
+width: 30px;
+height: 60px;
+background: radial-gradient(circle, rgba(255,165,0,1) 0%, rgba(255,0,0,0.5) 50%, transparent 100%);
+border-radius: 50%;
+opacity: 0.7;
+animation: flicker 1.5s infinite alternate ease-in-out;
+position: relative;
+bottom: -250px;
+}
+
+.flame:nth-child(1) { height: 550px; animation-delay:1s; }
+.flame:nth-child(2) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(3) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(4) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(5) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(6) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(7) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(8) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(9) { height: 550px; animation-delay: 1s; }
+
+.flame:nth-child(10) { height: 550px; animation-delay:1s; }
+.flame:nth-child(11) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(12) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(13) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(14) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(15) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(16) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(17) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(18) { height: 550px; animation-delay: 1s; }
+
+.flame:nth-child(19) { height: 550px; animation-delay:1s; }
+.flame:nth-child(20) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(21) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(22) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(23) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(24) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(25) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(26) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(27) { height: 550px; animation-delay: 1s; }
+
+.flame:nth-child(28) { height: 550px; animation-delay:1s; }
+.flame:nth-child(29) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(30) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(31) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(32) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(33) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(34) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(35) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(36) { height: 550px; animation-delay: 1s; }
+
+.flame:nth-child(37) { height: 550px; animation-delay:1s; }
+.flame:nth-child(38) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(39) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(40) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(41) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(42) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(43) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(44) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(45) { height: 550px; animation-delay: 1s; }
+
+.flame:nth-child(46) { height: 550px; animation-delay:1s; }
+.flame:nth-child(47) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(48) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(49) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(50) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(51) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(52) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(53) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(54) { height: 550px; animation-delay: 1s; }
+
+.flame:nth-child(55) { height: 550px; animation-delay:1s; }
+.flame:nth-child(56) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(57) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(58) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(59) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(60) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(61) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(62) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(63) { height: 550px; animation-delay: 1s; }
+
+.flame:nth-child(64) { height: 550px; animation-delay:1s; }
+.flame:nth-child(65) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(66) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(67) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(68) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(69) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(70) { height: 550px; animation-delay: 1s; }
+.flame:nth-child(71) { height: 550px; animation-delay: 2s; }
+.flame:nth-child(72) { height: 550px; animation-delay: 1s; }
+
+
+
+@keyframes flicker {
+0% {
+    transform: scale(1);
+    opacity: 0.7;
+}
+100% {
+    transform: scale(1.2);
+    opacity: 0.9;
+}
+}

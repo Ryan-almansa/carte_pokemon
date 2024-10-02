@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle, #da3434, #612525); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    perspective: 1000px; 
+}
+
+.sparkle, .sparkle-big {
+    position: absolute;
+    bottom: -10px;
+    background: radial-gradient(circle, #ffcc00 0%, rgba(255,255,255,0) 100%);
+    border-radius: 50%;
+    animation: sparkle-animation 10s linear infinite;
+    opacity: 0;
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.6), 0 0 50px rgba(255, 204, 0, 0.4);
+}
+
+/* Petites étincelles */
+.sparkle {
+    width: 4px;
+    height: 4px;
+    animation-duration: calc(4s + (2 * random())); 
+    animation-delay: calc(-2s * random());
+}
+
+/* Grandes étincelles brillantes */
+.sparkle-big {
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #ff0000 0%, rgba(255,255,255,0) 100%);
+    box-shadow: 0 0 40px rgba(230, 32, 32, 0.8), 0 0 70px rgba(255, 8, 0, 0.6);
+    animation-duration: 6s;
+    animation-delay: calc(3s * random());
+}
+
+@keyframes sparkle-animation {
+    0% {
+        transform: translateX(0) translateY(0) scale(0.5);
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+        transform: translateX(calc(-50px + 100px * random())) translateY(calc(-200px)) scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateX(calc(-70px + 140px * random())) translateY(calc(-400px)) scale(1.2);
+    }
+    75% {
+        opacity: 0.4;
+        transform: translateX(calc(-100px + 200px * random())) translateY(calc(-600px)) scale(0.8);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(calc(-120px + 240px * random())) translateY(-1000px) scale(0);
+    }
+}
+
+@keyframes random {
+    from { transform: scale(1); }
+    to { transform: scale(calc(0.5 + 0.5 * random())); }
+}
+
+/* Ajout d'un effet lumineux et brillant */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.568), transparent);
+    mix-blend-mode: screen;
+    opacity: 1.5;
+    pointer-events: none;
+    animation: lightPulse 5s infinite;
+}
+
+@keyframes lightPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+}
+
+:root {
+    --random: calc(0.5 + (random() * 0.5));
+}
