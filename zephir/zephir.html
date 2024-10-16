@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="zephir.css">
 </head>
 <body>
-  <style>
+  <style> 
     body {
       background-color: #2f22a7af;
       overflow: hidden;
@@ -40,7 +40,7 @@
       <p><strong>Vitesse :</strong> >---------------25</p>
     </div>
     <div class="card-footer">
-      <p>N°3301 - Le stalkeur fou   </p>
+      <p>N°3301 - Le stalker fou   </p>
     </div>
   </div>
   <script>
@@ -52,17 +52,14 @@
       const sparkle = document.createElement('div');
       sparkle.classList.add('sparkle');
       
-      // Position de départ aléatoire près du bas de l'écran
       const startX = window.innerWidth / 2 + (Math.random() * 100 - 50);
       sparkle.style.left = `${startX}px`;
   
-      // Ajouter l'étincelle à la page
       body.appendChild(sparkle);
   
-      // Déplacer l'étincelle dans une direction aléatoire
-      const randomX = Math.random() * 200 - 100;  // Mouvement horizontal aléatoire
-      const randomY = Math.random() * 200 - 150;  // Mouvement vertical aléatoire
-      const duration = Math.random() * 2 + 1;     // Durée aléatoire de l'animation
+      const randomX = Math.random() * 200 - 100;  
+      const randomY = Math.random() * 200 - 150;  
+      const duration = Math.random() * 2 + 1;     
   
       sparkle.animate([
         { transform: 'translate(0, 0)', opacity: 1 },
@@ -74,13 +71,11 @@
         fill: 'forwards'
       });
   
-      // Supprimer l'étincelle après l'animation
       setTimeout(() => {
         sparkle.remove();
       }, duration * 1000);
     }
   
-    // Générer les étincelles de façon répétée
     setInterval(createSparkle, 100);
   </script>
 

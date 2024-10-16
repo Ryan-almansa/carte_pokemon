@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #5990c4f8;
+  }
+  
+  #rain-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .raindrop {
+    position: absolute;
+    bottom: 100%;
+    width: 2px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.438);
+    animation: fall linear infinite;
+    animation-duration: 0.1s;
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(100vh);
+    }
+  }
+  
